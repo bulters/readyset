@@ -6,6 +6,14 @@ This is a simple, naive and non-production ready Set implementation for Golang.
 
 For me to learn about interface{} in Golang.
 
+## What's missing
+
+A lot, for example:
+
+* Set difference
+* Set iteration
+* Other cool set operations
+
 ## Usage
 
 Should you decide to use this please consider the following:
