@@ -108,3 +108,10 @@ func Test_Multiple_Types_Includes(t *testing.T) {
   }
 }
 
+func Test_String(t *testing.T) {
+  s := New(1,2,3)
+  str := s.String()
+  if str != "Set(size: 3)" {
+    t.Error("String representation is incorrect\n\tIs: " + str + "\n\tExpected: Set(size: 3)")
+  }
+}

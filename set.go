@@ -1,5 +1,9 @@
 package set
 
+import (
+  "strconv"
+)
+
 type Set map[interface{}]struct{}
 
 func New(payload ...interface{}) Set {
@@ -72,4 +76,10 @@ func (s Set)Intersect(o Set) Set {
     }
   }
   return is
+}
+
+// Formatting functions
+func (s Set) String() string {
+  sizeStr := strconv.Itoa(s.Size())
+  return "Set(size: " + sizeStr + ")"
 }
