@@ -78,6 +78,18 @@ func (s Set)Intersect(o Set) Set {
   return is
 }
 
+func (s Set)Complement(o Set) Set {
+  cs := make(Set)
+  for i, _ := range(s) {
+    _, e := o[i]
+    if !e {
+      cs.Add(i)
+    }
+  }
+
+  return cs
+}
+
 // Formatting functions
 func (s Set) String() string {
   sizeStr := strconv.Itoa(s.Size())

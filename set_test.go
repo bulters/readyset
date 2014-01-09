@@ -88,6 +88,19 @@ func Test_Intersect(t *testing.T) {
   }
 }
 
+func Test_Complement(t *testing.T) {
+  s1 := New(1,2,3)
+  s2 := New(2,3)
+  c := s1.Complement(s2)
+  if c.Size() != 1 {
+    t.Error("Complement resulted in wrong size")
+  }
+
+  if !c.Includes(1) {
+    t.Error("Complement does not include only intended element")
+  }
+}
+
 // General - higher level - tests
 // for i.e. multiple types of items.
 func Test_Multiple_Types_Size(t *testing.T) {
@@ -115,3 +128,4 @@ func Test_String(t *testing.T) {
     t.Error("String representation is incorrect\n\tIs: " + str + "\n\tExpected: Set(size: 3)")
   }
 }
+
