@@ -17,16 +17,26 @@ You still here? Use as follows:
     package main
 
     import (
+      "fmt"
       "github.com/bulters/readyset"
     )
 
     func main() {
-      s1 := set.New(1,2,3)
+      s := set.New(1,2,3)
+      fmt.Println(s.String())
+
       s2 := set.New(2,3,4)
-      i := s1.Intersect(s2)
-      u1 := s1.Union(s2)
+
+      i := s.Intersect(s2)
+      fmt.Println("i: " + i.String())
+
+      u1 := s.Union(s2)
+      fmt.Println("u1: " + u1.String())
+
       s2.Add(5)
-      u2 := s1.Union(s2)
+
+      u2 := s.Union(s2)
+      fmt.Println("u2: " + u2.String())
     }
 
 ## Feedback
